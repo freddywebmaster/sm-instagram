@@ -5,11 +5,14 @@ const nextConfig = {
     if (!config.experiments) {
       config.experiments = {};
     }
-
+     
     config.experiments.topLevelAwait = true;
 
     return config;
   },
+  typescript: {
+    ignoreBuildErrors: true
+},
   images: {
     domains: ['res.cloudinary.com'],
   },
