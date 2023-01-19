@@ -30,9 +30,7 @@ const paginate: Paginate = (Model, sort, cursor, query = {}) => {
   const getNextCursor: GetNextCursor = async (items) => {
     if (items.length === 0) return { cursor: null, hasMore: false };
 
-    const lastDoc = await Model.findOne(query)
-      .sort({ $natural: -1 * sort[1] })
-      .lean();
+    const lastDoc = await Model.findOne(query).sort({ $natural: -1 * sort[1] });
 
     const lastItem = items[items.length - 1];
 
