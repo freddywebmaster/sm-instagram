@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useContext, useState } from 'react';
+import { createContext, useContext, useState } from 'react';
 
 // types
 import { Callback } from '~/types/utils';
@@ -21,7 +21,7 @@ interface ModalInitState {
 }
 
 interface ModalProviderProps {
-  children: ReactNode;
+  children: any;
 }
 
 export type ModalType = keyof typeof MODAL_TYPES;
