@@ -21,7 +21,7 @@ type Paginate = <T extends AnyParamConstructor<any>>(
   query?: Record<string, any>,
 ) => PaginateReturn;
 
-const paginate: Paginate = (Model, sort: any, cursor, query = {}) => {
+const paginate: Paginate = (Model, sort, cursor, query = {}) => {
   const sortField: string = sort[0];
   const sortOperator: SortOperator = sort[1] === 1 ? '$gt' : '$lt';
 
