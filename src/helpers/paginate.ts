@@ -1,6 +1,6 @@
 import { AnyParamConstructor, BeAnObject, ReturnModelType } from '@typegoose/typegoose/lib/types';
 
-type Sort = [number, 1 | -1];
+type Sort = [string, 1 | -1];
 type SortOperator = '$gt' | '$lt';
 
 type GetNextCursor = (items: any[]) => Promise<{
@@ -22,7 +22,7 @@ type Paginate = <T extends AnyParamConstructor<any>>(
 ) => PaginateReturn;
 
 const paginate: Paginate = (Model, sort, cursor, query = {}) => {
-  const sortField: number = sort[0];
+  const sortField: string = sort[0];
   const sortOperator: SortOperator = sort[1] === 1 ? '$gt' : '$lt';
 
   const filterQuery = cursor ? { [sortField]: { [sortOperator]: cursor }, ...query } : query;
