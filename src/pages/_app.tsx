@@ -5,10 +5,8 @@ import { ApolloProvider } from '@apollo/client';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import ProgressBar from '@badrap/bar-of-progress';
 import '@fortawesome/fontawesome-svg-core/styles.css';
-
 import { useApollo } from '~/lib/apolloClient';
 import { wrapper } from '~/redux/store';
-
 import ModalProvider from '~/contexts/ModalContext';
 import SocketProvider from '~/contexts/SocketContext';
 
@@ -26,7 +24,7 @@ Router.events.on('routeChangeStart', progressBar.start);
 Router.events.on('routeChangeComplete', progressBar.finish);
 Router.events.on('routeChangeError', progressBar.finish);
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }: any) {
   const apolloClient = useApollo(pageProps);
 
   return (
