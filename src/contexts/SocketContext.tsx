@@ -72,8 +72,7 @@ const SocketProvider = ({ children }: SocketProviderProps) => {
     if (currentUserId == null) return;
 
     (async () => {
-      await fetch('/api/socket');
-
+      await fetch('https://sm-instagram.vercel.app/api/socket');
       const socket = io({
         withCredentials: true,
         query: {
